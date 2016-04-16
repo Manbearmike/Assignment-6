@@ -10,7 +10,7 @@ function CreateCustomer()
         {         if (objRequest.readyState == 4 && objRequest.status == 200)
         {             var result = JSON.parse(objRequest.responseText);
                         OperationResult(result);         }
-                        }          //Start AJAX request
+}          //Start AJAX request
                         objRequest.open("POST", url, true);
                         objRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         objRequest.send(newcustomer);   }
