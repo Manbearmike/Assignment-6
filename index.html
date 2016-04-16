@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment5</title>
+<link rel="stylesheet" type="text/css" href="styles/Assignment6.css" />
+<script src="js/Assignment6.js"></script>
+</head>
+<body>
+<h1>Assignment 6 Order Management</h1>
+<hr>
+<p>
+<select onchange="MenuChoice()" id="SectionMenu">
+    <option>Please Choose A Section</option>
+    <option>Display The First Section</option>
+    <option>Display The Second Section</option>
+    <option>Display The Third Section</option>
+    </select>
+</p>
+<section id="FirstSection" class="FirstSection">
+<h2>
+<br>
+<label>Please Enter a Customer ID: </label>
+<input type="text" id="custid">
+<label class="example"> The customer ID should be 5 uppercase text characters.</label>
+<br>
+<label>Please enter the Customer Name: </label>
+<input type="text" id="custname">
+<br>
+<label>Please enter the Customer's City: </label>
+<input type="text" id="custCity">
+<br>
+<button onclick="CreateCustomer()" id="newcust">Add a New Customer</button>
+<br>
+<hr>
+<br>
+<label id="result">The operation's result will display here.</label>
+</h2>
+</section>
+<section id="SecondSection" class="SecondSection">
+<h2>
+<br>
+<label>Please Enter an Order ID: </label>
+<input type="text" id="orderNum">
+<br>
+<label>Please enter the Ship to Name: </label>
+<input type="text" id="shiptoName">
+<br>
+<label>Please enter the Ship to Address: </label>
+<input type="text" id="shiptoAddress">
+<br>
+<label>Please enter the Ship to City: </label>
+<input type="text" id="shiptoCity">
+<br>
+<label>Please enter the Ship to Zipcode: </label>
+<input type="text" id="shiptoZip">
+<br>
+<button onclick="UpdateOrderAddress()" id="AddressInfo">Add Address Info</button>
+<br>
+<hr>
+<br>
+<label id="Addressresult">The operation's result will display here.</label>
+</h2>
+</section>
+<section id="ThirdSection" class="ThirdSection">
+<h2>
+<hr>
+<label>Please enter a Customer ID: </label>
+<input type="text" id="customerDeletion">
+<br>
+<button onclick="DeleteCustomers()" id="deleteCustomerBtn">Delete Customer Info</button>
+<br>
+<hr>
+<label id="deleteCustomerStatus"> Deletion Status</label>
+</h2>
+</section>
+<br>
+</body>
+</html>
