@@ -50,7 +50,8 @@ if (output == 1)
     
 ////////////////////////////////////////////////////////////////////////////////
 function DeleteCustomers() //getOrdersForCustomer Called by Button
-{   var objRequest = new XMLHttpRequest();
+{   confirm("Delete Customer?")
+    var objRequest = new XMLHttpRequest();
     //Create AJAX request object
     //Create URL and Query string
     var url = "http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/deleteCustomer/";
@@ -58,19 +59,19 @@ function DeleteCustomers() //getOrdersForCustomer Called by Button
     //Checks that the object has returned data
     objRequest.onreadystatechange = function()
 {         if (objRequest.readyState == 4 && objRequest.status == 200)
-{         var Deletionoutput = JSON.parse(objRequest.responseText);
-         deleteCustomerInfo(Deletionoutput);
+{         var output = JSON.parse(objRequest.responseText);
+         deleteCustomerInfo(output);
 }
 }   //Initiate the server request
     objRequest.open("GET", url, true);
     objRequest.send(); }
     
-    function deleteCustomerInfo(Deletionoutput)
+    function deleteCustomerInfo(output)
 {
-if (Deletionoutput.WasSuccessful == 1)
-    { document.getElementById("deleteCustomerStatus").innerHTML = "The operation was successful!" }
+if (output.DeleteCustomerResult.WasSuccessful == 1)
+    { document.getElementById("deleteCustomerStatus").innerHTML = "The operation is complete" }
     else
-    { document.getElementById("deleteCustomerStatus").innerHTML = "The operation was not successful!" + "<br>" + Deletionoutput;}}
+    { document.getElementById("deleteCustomerStatus").innerHTML = "There was an error";}}
     
 //////////////////////////////////////////////////END SECTION CUSTOMER HISTORY///////////////////////////////////////////   
 
